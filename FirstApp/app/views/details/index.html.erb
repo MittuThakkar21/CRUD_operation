@@ -1,0 +1,27 @@
+<h1>User details</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>CotactDetail</th>
+      <th colspan = "3"></th>
+    </tr>
+  </thead>
+
+<tbody>
+  <% @details.each do|detail|%>
+    <tr>
+	  <td><%= detail.Name%></td>
+      <td><%= detail.Age%></td>
+      <td><%= detail.Email%></td>
+      <td><%= detail.ContactDetail%></td>
+      <td><%= link_to  "Show", detail_path(detail)%></td>
+      <td><%= link_to "Edit", edit_detail_path(detail)%></td>
+      <td><%= link_to 'Destroy', detail,method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+  <% end %>
+	<td><%= link_to "New", new_detail_path%></td>
+</tbody>
+</table>
